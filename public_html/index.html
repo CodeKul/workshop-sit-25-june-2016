@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="myApp">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <input type="text" id="textPhone" 
+                   onKeyDown="changeIt(this)"/>
+            
+            <label id="labelStatus">Hello</label>
+        </div>
+        
+        <div ng-controller="dataBindController">
+            <input type="text" ng-model="inputMobile"/>
+            <label>{{inputMobile}}</label>
+            <button ng-click="openAlert()">Alert</button>
+            
+            <img src=""/>
+        </div>
+        
+        <div ng-controller="listController" 
+             ng-init="myMobiles = ['Android','iOS','Rim','Symbian','Windows']">
+            
+            <input type="text" ng-model="sort"/>
+            <ul>
+                <li ng-repeat="mobile in myMobiles | filter : sort"> {{mobile}}</li>
+            </ul>
+            
+            <ul>
+                <li ng-repeat="country in countries"> {{country}}</li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript" src="angular.min.js">
+        </script>
+        
+        <script type="text/javascript" src="my.js">
+        </script>
+        
+         <script type="text/javascript" src="app.js">
+        </script>
+    </body>
+</html>
